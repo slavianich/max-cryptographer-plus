@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Text Crypto Plus</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body data-theme="light">
+    <main class="container">
+      <header class="header">
+        <h1>🔐 Local Text Crypto Plus</h1>
+        <button id="themeToggle" class="secondary" type="button">Dark theme</button>
+      </header>
+
+      <label for="inputText">Input text / encoded payload</label>
+      <textarea id="inputText" rows="6" placeholder="Type plain text to encrypt, or paste encoded text to decrypt..."></textarea>
+
+      <div class="controls-row">
+        <button id="pasteBtn" class="secondary" type="button">Paste from clipboard</button>
+        <button id="clearBtn" class="secondary" type="button">Clear fields</button>
+      </div>
+
+      <label for="password">Password</label>
+      <input id="password" type="password" autocomplete="off" placeholder="Enter password" />
+      <div class="password-row">
+        <small id="strengthIndicator" class="strength weak">Strength: weak</small>
+        <button id="generatePasswordBtn" class="secondary" type="button">Generate strong password</button>
+      </div>
+
+      <div class="settings-grid">
+        <div>
+          <label for="kdfMode">KDF mode</label>
+          <select id="kdfMode">
+            <option value="pbkdf2" selected>PBKDF2 (default)</option>
+            <option value="fast">Fast mode (testing)</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="iterations">Iterations</label>
+          <input id="iterations" type="number" min="1000" max="1000000" step="1000" value="250000" />
+        </div>
+      </div>
+
+      <div class="controls-row">
+        <button id="encryptBtn" type="button">Encrypt</button>
+        <button id="decryptBtn" type="button">Decrypt</button>
+      </div>
+
+      <label for="resultText">Result</label>
+      <textarea id="resultText" rows="6" readonly placeholder="Result will appear here..."></textarea>
+
+      <div class="meta-row">
+        <small id="resultLength">Encrypted length: 0</small>
+        <label class="emoji-toggle">
+          <input id="emojiMode" type="checkbox" />
+          Emoji separators
+        </label>
+      </div>
+
+      <div class="controls-row">
+        <button id="copyBtn" class="secondary" type="button">Copy result</button>
+      </div>
+
+      <p id="status" role="status" aria-live="polite"></p>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
