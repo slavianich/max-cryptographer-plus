@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Local Text Crypto Plus",
+  "version": "2.0.0",
+  "description": "Offline text encryption/decryption with password (AES-GCM + PBKDF2)",
+  "action": {
+    "default_title": "Local Text Crypto Plus",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "clipboardRead",
+    "clipboardWrite"
+  ]
+}
